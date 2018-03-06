@@ -1,12 +1,12 @@
 
     Achilles
     Agni
-    AhMuzenCab
-    AhPuch
+    Ah-Muzen-Cab
+    Ah-Puch
     Amaterasu
     Anhur
     Anubis
-    AoKuang
+    Ao-Kuang
     Aphrodite
     Apollo
     Arachne
@@ -33,18 +33,18 @@
     Change
     Chiron
     Chronos
-    CuChulainn
+    Cu-Chulainn
     Cupid
 
 
 
-    DaJi
+    Da-Ji
     Discordia
 
 	
 
 
-    ErlangShen
+    Erlang-Shen
 
 
 
@@ -56,7 +56,7 @@
 
     Ganesha
     Geb
-    GuanYu
+    Guan-Yu
 
 
 
@@ -65,8 +65,8 @@
     HeBo
     Hel
     Hercules
-    HouYi
-    HunBatz
+    Hou-Yi
+    Hun-Batz
 
 
 
@@ -76,7 +76,7 @@
 
 
     Janus
-    JingWei
+    Jing-Wei
 
 
     Kali
@@ -96,12 +96,12 @@
 
 
 
-    NeZha
+    Ne-Zha
     Neith
     Nemesis
     Nike
     Nox
-    NuWa
+    Nu-Wa
 
 	
 
@@ -128,7 +128,7 @@
     Skadi
     Sobek
     Sol
-    SunWukong
+    Sun-Wukong
     Susano
     Sylvanus
 
@@ -136,7 +136,7 @@
 
     Terra
     Thanatos
-    TheMorrigan
+    The-Morrigan
     Thor
     Thoth
     Tyr
@@ -152,7 +152,7 @@
 
 
     Xbalanque
-    XingTian
+    Xing-Tian
 
 
     Ymir
@@ -160,4 +160,4 @@
 
 
     Zeus
-    ZhongKui
+    Zhong-Kui
