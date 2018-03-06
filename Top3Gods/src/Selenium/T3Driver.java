@@ -23,7 +23,7 @@ public class T3Driver {
 
         driver.get( url );
         Thread.sleep( 500 );
-        for ( int i = 0; i < 3; i++ ) {
+        for ( int i = 0; i < 1; i++ ) { //change this back to 3 when we work with multiple pages
             try {
                 String src = driver.getPageSource();
                 // Scanner pageSource = new Scanner( src );
