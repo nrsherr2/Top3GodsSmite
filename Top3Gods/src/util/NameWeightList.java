@@ -8,14 +8,14 @@ import java.util.Scanner;
  * List that contains all smite gods and how many times this player has played
  * that god. Contains methods for keeping track how many times a player plays
  * that god and giving the user that player's top 3 gods
- * 
+ *
  * @author Nick
  *
  */
 public class NameWeightList {
 
-    private String[] godNames;
-    private int[]    occurrences;
+    private static String[] godNames;
+    private final int[]     occurrences;
 
     /**
      * Creates a new NameWeightList. Goes through a file containing all smite
@@ -26,10 +26,10 @@ public class NameWeightList {
         try {
             int i = 0;
             int len = 0;
-            File f = new File( "rec/smitegods.txt" );
-            Scanner reader = new Scanner( f );
+            final File f = new File( "rec/smitegods.txt" );
+            final Scanner reader = new Scanner( f );
             // figure out how many gods you are reading in
-            Scanner reader2 = new Scanner( f );
+            final Scanner reader2 = new Scanner( f );
             while ( reader2.hasNext() ) {
                 reader2.next();
                 len++;
@@ -38,13 +38,13 @@ public class NameWeightList {
             // read in the names
             godNames = new String[len];
             while ( reader.hasNext() ) {
-                String godName = reader.next();
+                final String godName = reader.next();
                 godNames[i] = godName;
                 i++;
             }
             reader.close();
         }
-        catch ( FileNotFoundException e ) {
+        catch ( final FileNotFoundException e ) {
             throw new IllegalArgumentException( "Can not find file" );
         }
         this.occurrences = new int[godNames.length];
@@ -56,13 +56,13 @@ public class NameWeightList {
     /**
      * adds an occurrence of playing a god to the list by telling the method the
      * god that was played
-     * 
+     *
      * @param godName
      *            the god to add an occurrence of
      * @throws IllegalArgumentException
      *             if you did not give it a valid god
      */
-    public void addOccurrence ( String godName ) {
+    public void addOccurrence ( final String godName ) {
         boolean found = false;
         for ( int i = 0; i < godNames.length; i++ ) {
             if ( godNames[i].equalsIgnoreCase( godName ) ) {
@@ -77,7 +77,7 @@ public class NameWeightList {
 
     /**
      * tells the user the top 3 gods in the list, by weight.
-     * 
+     *
      * @return a list of 3 gods and their corresponding occurrences
      */
     public String[][] top3 () {
@@ -103,7 +103,7 @@ public class NameWeightList {
                 god3 = godNames[i];
             }
         }
-        String[][] ret = new String[3][2];
+        final String[][] ret = new String[3][2];
         ret[0][0] = god1;
         ret[0][1] = Integer.toString( oc1 );
         ret[1][0] = god2;
