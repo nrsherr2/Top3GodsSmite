@@ -17,8 +17,11 @@ public class ConsoleUI {
                                                    // call
             // to our driver class
             results = T3Driver.getTop3( players[i] );
+            String lev = T3Driver.getLevel(players[i]);
+            String rank = T3Driver.getRank( players[i] );
 
             System.out.println( "For player " + players[i] + ":" );
+            System.out.println( "level: " + lev );
             for ( int j = 0; j < 3; j++ ) {
                 System.out.println( " " + ( j + 1 ) + ". " + results[j][0] + " - " + results[j][1] );
             }
