@@ -17,7 +17,6 @@ public class T3Driver {
         final WebDriver driver = new HtmlUnitDriver();
 
         driver.get( url );
-        Thread.sleep( 500 );
         for ( int i = 0; i < 3; i++ ) { // change this back to 3 when we work
                                         // with multiple pages
             if ( i > 0 ) {
@@ -79,10 +78,11 @@ public class T3Driver {
 
         driver.get( url );
 
-        String lev = driver.findElement( By.className( "level" ) ).getText();
+        final String lev = driver.findElement( By.className( "level" ) ).getText();
         return lev;
     }
-    public static String getRank(String player) {
+
+    public static String getRank ( String player ) throws InterruptedException {
 
         final String url = "http://smite.guru/profile/pc/" + player + "/ranked";
 
@@ -90,21 +90,26 @@ public class T3Driver {
 
         driver.get( url );
         String rank = "";
-        String src = driver.getPageSource();
-        Scanner reader = new Scanner( src );
+        final String src = driver.getPageSource();
+        final Scanner reader = new Scanner( src );
         while ( reader.hasNextLine() ) {
             String ln = reader.nextLine();
             ln = ln.trim();
-            if (ln.equalsIgnoreCase( "<div class=\"widget-header queue-header\">" ) && reader.hasNextLine()) {
-              String gameMode = reader.nextLine();
-              gameMode = gameMode.trim();
-              if (gameMode.equalsIgnoreCase( "Ranked: Conquest" )) {
-                  
-              }
+            if ( ln.equalsIgnoreCase( "<div class=\"widget-header queue-header\">" ) && reader.hasNextLine() ) {
+                String gameMode = reader.nextLine();
+                gameMode = gameMode.trim();
+                if ( gameMode.equalsIgnoreCase( "Ranked: Conquest" ) ) {
+                    String nextLn = reader.nextLine();
+                    while ( !nextLn.contains( "<img src=\"/assets/img/ranked/" ) ) {
+                        nextLn = reader.nextLine();
+                    }
+                    nextLn = reader.nextLine();
+                    nextLn = reader.nextLine().trim();
+                    rank = nextLn;
+                }
             }
         }
         reader.close();
-        // System.out.println(lev);
         return rank;
     }
 }
